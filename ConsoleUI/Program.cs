@@ -9,7 +9,13 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            // ProductTest(); //artık yapıyı bir extract method haline getirdik.
+            //DTO- Data Transformation Object 
+             ProductTest(); //artık yapıyı bir extract method haline getirdik.
+            //CategoryTest();  //burayı da bir extract method haline getirdik.
+        }
+
+        private static void CategoryTest()
+        {
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
             foreach (var category in categoryManager.GetAll())
             {
@@ -20,9 +26,9 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var product in productManager.GetByUnitPrice(50, 100))
+            foreach (var product in productManager.GetProductDetails())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.CategoryName);
             }
         }
     }

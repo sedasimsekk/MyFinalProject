@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,6 +68,11 @@ namespace DataAccess.Concrete.InMemory
             //burada where methodu ile buna göre olanlar nerede hepsini al dedik ve tolist ile bunları liste yapıp çağırıldığı yere gönderdik.
             return _products.Where(_products => _products.CategoryId == categoryId).ToList();
             //bu sayede bizden istenen şeye göre filtreledik bunu yanına && || bunlar ile daha da farklı koşullara göre alabiliriz.
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void UpDate(Product product)
