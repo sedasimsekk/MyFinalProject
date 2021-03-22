@@ -36,7 +36,7 @@ namespace Business.Concrete
             //iş kodları 
 
             //mesela sistemin şu saatten sonra ürün listelemesini istemiyorsam böyle bir şey yapabilirim
-            if (DateTime.Now.Hour==22) //simdiki saat sorgusu
+            if (DateTime.Now.Hour==22)//simdiki saat sorgusu
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
